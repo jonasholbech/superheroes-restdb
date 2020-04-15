@@ -12,7 +12,7 @@ elements.unknown.addEventListener("click", (e) => {
 elements.real_name.addEventListener("keyup", (e) => {
   document.querySelector("h1").textContent = e.target.value;
 });
-
+form.setAttribute("novalidate", true);
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log("submitted");
