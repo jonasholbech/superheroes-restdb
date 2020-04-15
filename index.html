@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Superheroes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Superheroes</h1>
+    </header>
+    <main>
+      <form>
+        <label>
+          Real Name
+          <input type="password" name="real_name" required />
+        </label>
+        <label>
+          Alias
+          <input type="text" name="alias" required />
+        </label>
+        <label>
+          Date of Birth
+          <input type="date" name="dob" />
+        </label>
+        <label
+          >Unknown birthday
+          <input type="checkbox" name="unknown" />
+        </label>
+        <label>
+          Enemies
+          <input type="number" name="enemies" value="0" />
+        </label>
+        <fieldset>
+          <legend>Powers</legend>
+          <ul>
+            <li>
+              <label>
+                <input type="checkbox" name="powers" value="Fly" />
+                Fly
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="powers" value="Super Fart" />
+                Super Fart
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="powers" value="Laser Vision" />
+                Laser Vision
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <input type="submit" value="Save" />
+      </form>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

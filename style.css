@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+input,
+textarea,
+select,
+label {
+  display: block;
+}
+legend,
+label {
+  font-weight: bold;
+}
+label {
+  cursor: pointer;
+}
+fieldset label,
+fieldset input {
+  font-weight: normal;
+  display: inline-block;
+}
+label,
+fieldset {
+  margin-bottom: 1rem;
+}
