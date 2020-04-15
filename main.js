@@ -7,11 +7,13 @@ window.elements = elements;
 
 elements.unknown.addEventListener("click", (e) => {
   elements.dob.disabled = !elements.dob.disabled;
-  setTimeout(() => {
-    elements.unknown.click();
-  }, 1000);
 });
 
-elements.real_name.addEventListener("click", (e) => {
-  elements.real_name.blur();
+elements.real_name.addEventListener("keyup", (e) => {
+  document.querySelector("h1").textContent = e.target.value;
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("submitted");
 });
