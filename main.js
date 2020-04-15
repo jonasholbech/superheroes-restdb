@@ -1,1 +1,3 @@
-const f = document.querySelector("form");
+import { endpoint, apiKey } from "./modules/settings";
+
+const form = document.querySelector("form");

@@ -1,0 +1,24 @@
+{
+  "name": "superheroes-restdb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "parcel *.html",
+    "build": "parcel build *.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonasholbech/superheroes-restdb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonasholbech/superheroes-restdb/issues"
+  },
+  "homepage": "https://github.com/jonasholbech/superheroes-restdb#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
