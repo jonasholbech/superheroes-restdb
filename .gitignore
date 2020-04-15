@@ -1,3 +1,5 @@
 .vscode/
 Notes.md
 node_modules/
+dist/
+.cache/
