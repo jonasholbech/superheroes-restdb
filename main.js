@@ -1,5 +1,7 @@
 import { endpoint, apiKey } from "./modules/settings";
 
 const form = document.querySelector("form");
+window.form = form;
 const elements = form.elements;
-console.log(elements.enemies);
+window.elements = elements;
+elements.enemies.value = 12;
