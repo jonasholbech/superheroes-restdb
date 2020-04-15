@@ -15,5 +15,7 @@ elements.real_name.addEventListener("keyup", (e) => {
 form.setAttribute("novalidate", true);
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  const bool = form.alias.reportValidity();
+  console.log(bool);
   console.log("submitted");
 });
