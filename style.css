@@ -37,3 +37,6 @@ input + p {
 input.invalid + p {
   display: block;
 }
+.hidden {
+  display: none;
+}

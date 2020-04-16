@@ -12,14 +12,28 @@ elements.unknown.addEventListener("click", (e) => {
 form.setAttribute("novalidate", true);
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (form.checkValidity()) {
+  let validForm = true;
+  const formElements = form.querySelectorAll("input");
+  formElements.forEach((el) => {
+    el.classList.remove("invalid");
+  });
+
+  const cbs = [...form.querySelectorAll(`[name=powers]`)];
+  const checked = cbs.filter((el) => el.checked);
+
+  const errorContainerPowers = form.querySelector("fieldset p");
+  if (checked.length === 0) {
+    validForm = false;
+    errorContainerPowers.classList.remove("hidden");
+  } else {
+    errorContainerPowers.classList.add("hidden");
+  }
+  if (form.checkValidity() && validForm) {
     //send to restdb/api
     console.log("SUBMIT READY");
   } else {
-    //!aweseom
-    const formElements = form.querySelectorAll("input");
+    //!awesome
     formElements.forEach((el) => {
-      el.classList.remove("invalid");
       if (!el.checkValidity()) {
         el.classList.add("invalid");
       }
