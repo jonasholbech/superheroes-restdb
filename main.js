@@ -15,7 +15,13 @@ elements.real_name.addEventListener("keyup", (e) => {
 form.setAttribute("novalidate", true);
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const bool = form.alias.reportValidity();
-  console.log(bool);
-  console.log("submitted");
+  if (form.checkValidity()) {
+    //send to restdb/api
+    console.log("SUBMIT READY");
+  } else {
+    if (!form.elements.real_name.checkValidity()) {
+      //show error for real_name
+      console.log("real name is invalid");
+    }
+  }
 });
