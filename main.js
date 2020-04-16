@@ -20,8 +20,10 @@ form.addEventListener("submit", (e) => {
     console.log("SUBMIT READY");
   } else {
     if (!form.elements.real_name.checkValidity()) {
-      //show error for real_name
-      console.log("real name is invalid");
+      const err = form.elements.real_name.validity;
+      if (err.valueMissing) {
+        console.log("please fill in whatever");
+      }
     }
   }
 });
