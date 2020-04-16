@@ -27,3 +27,12 @@ form.addEventListener("submit", (e) => {
     }
   }
 });
+
+/*
+1. remove all error messages
+2. loop through 
+3. show error messages
+  4. create with JS
+  5. have them in the DOM hide/show
+  6. 
+*/
