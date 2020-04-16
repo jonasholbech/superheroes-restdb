@@ -9,9 +9,6 @@ elements.unknown.addEventListener("click", (e) => {
   elements.dob.disabled = !elements.dob.disabled;
 });
 
-elements.real_name.addEventListener("keyup", (e) => {
-  document.querySelector("h1").textContent = e.target.value;
-});
 form.setAttribute("novalidate", true);
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -19,12 +16,14 @@ form.addEventListener("submit", (e) => {
     //send to restdb/api
     console.log("SUBMIT READY");
   } else {
-    if (!form.elements.real_name.checkValidity()) {
-      const err = form.elements.real_name.validity;
-      if (err.valueMissing) {
-        console.log("please fill in whatever");
+    //!aweseom
+    const formElements = form.querySelectorAll("input");
+    formElements.forEach((el) => {
+      el.classList.remove("invalid");
+      if (!el.checkValidity()) {
+        el.classList.add("invalid");
       }
-    }
+    });
   }
 });
 
@@ -35,4 +34,16 @@ form.addEventListener("submit", (e) => {
   4. create with JS
   5. have them in the DOM hide/show
   6. 
+  const postData = JSON.stringify(data);
+fetch("someurl", {
+  method: "post",
+  headers: {
+    "Content-Type": "application/json; charset=utf-8",
+    "x-apikey": "your-cors-api-key",
+    "cache-control": "no-cache"
+  },
+  body: postData
+})
+  .then(res => res.json())
+  .then(data => console.log(data));
 */

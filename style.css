@@ -28,3 +28,12 @@ label,
 fieldset {
   margin-bottom: 1rem;
 }
+.invalid {
+  border: 2px solid red;
+}
+input + p {
+  display: none;
+}
+input.invalid + p {
+  display: block;
+}
