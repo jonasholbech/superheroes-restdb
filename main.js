@@ -87,10 +87,20 @@ function getSuperheroes() {
 
 const template = document.querySelector("template").content;
 const heroContainer = document.querySelector("#herolist");
+
 function showSuperhero(hero) {
   const clone = template.cloneNode(true);
   clone.querySelector("h2").textContent = hero.alias;
   clone.querySelector("h3 span").textContent = hero.real_name;
+
+  clone
+    .querySelector(`[data-action="delete"]`)
+    .addEventListener("click", (e) => deleteSuperhero(hero._id));
+
+  clone
+    .querySelectorAll(`article, button[data-action="delete"]`)
+    .forEach((el) => (el.dataset.id = hero._id));
+
   const ul = clone.querySelector("ul");
   hero.powers.forEach((pow) => {
     const li = document.createElement("li");
@@ -98,4 +108,22 @@ function showSuperhero(hero) {
     ul.appendChild(li);
   });
   heroContainer.appendChild(clone);
+}
+
+function deleteSuperhero(id) {
+  /*
+  1. send requestion to API
+  2. remove from dom
+  */
+  fetch(endpoint + "rest/superheroes/" + id, {
+    method: "delete",
+    headers: {
+      accept: "application/json",
+      "x-apikey": apiKey,
+      "cache-control": "no-cache",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {});
+  document.querySelector(`article[data-id="${id}"]`).remove();
 }
